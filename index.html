@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free America Movement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:          #1A1830;
+      --ink-soft:     #3D3A5C;
+      --purple:       #4A3F9F;
+      --purple-mid:   #6B5FBE;
+      --purple-light: #9B92D8;
+      --purple-pale:  #D4D0F0;
+      --purple-ghost: #EEEDF9;
+      --red-accent:   #B03A2E;
+      --blue-accent:  #1F6B8E;
+      --gold:         #C9962A;
+      --white:        #FAFAF8;
+      --border:       rgba(74,63,159,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-logo span { color: var(--purple-light); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--purple-pale);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-donate {
+      background: var(--gold);
+      color: var(--ink) !important;
+      padding: 0.45rem 1.2rem;
+      border-radius: 2px;
+      opacity: 1 !important;
+      font-weight: 500;
+    }
+    .nav-donate:hover { background: #e0aa30 !important; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--ink);
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle texture */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse at 15% 40%, rgba(74,63,159,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 60%, rgba(31,107,142,0.15) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 90%, rgba(176,58,46,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Red-purple-blue tricolor bar */
+    .hero-bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    .hero-bar span {
+      display: block;
+      width: 36px;
+      height: 3px;
+      border-radius: 2px;
+    }
+    .hero-bar .bar-red   { background: var(--red-accent); }
+    .hero-bar .bar-purple { background: var(--purple-mid); }
+    .hero-bar .bar-blue  { background: var(--blue-accent); }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 0.25rem;
+      position: relative;
+      letter-spacing: -0.01em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--purple-light);
+    }
+    .hero h1 .word-movement {
+      display: block;
+      font-size: clamp(1.6rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--purple-pale);
+      margin-top: 0.4rem;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 300;
+      color: var(--purple-pale);
+      max-width: 580px;
+      margin: 2rem auto 0;
+      line-height: 1.8;
+      position: relative;
+    }
+
+    .hero-thesis {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-style: italic;
+      color: var(--gold);
+      max-width: 620px;
+      margin: 1.75rem auto 0;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+      position: relative;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--white);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 2.25rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--purple-ghost); }
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--purple-pale);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 2.25rem;
+      border-radius: 2px;
+      border: 1px solid rgba(212,208,240,0.35);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--purple-pale); color: var(--white); }
+
+    /* ── STRIPE ── */
+    .stripe {
+      height: 5px;
+      background: linear-gradient(to right,
+        var(--red-accent) 0%,
+        var(--red-accent) 33%,
+        var(--purple) 33%,
+        var(--purple) 66%,
+        var(--blue-accent) 66%,
+        var(--blue-accent) 100%
+      );
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem;
+    }
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-label::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 40px;
+      background: var(--purple-light);
+      opacity: 0.5;
+    }
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .section p {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      margin-bottom: 1.1rem;
+      line-height: 1.85;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section p strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 2.5rem;
+    }
+
+    /* ── FOUNDING STATEMENT ── */
+    .founding {
+      background: var(--ink);
+      padding: 5rem 2.5rem;
+    }
+    .founding .section {
+      padding: 0;
+    }
+    .founding .section-label { color: var(--purple-light); }
+    .founding .section-label::after { background: var(--purple-light); }
+    .founding .section h2 { color: var(--white); }
+    .founding .section p { color: var(--purple-pale); }
+    .founding .section p strong { color: var(--white); }
+    .founding-pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-style: italic;
+      color: var(--gold);
+      border-left: 2px solid var(--gold);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      line-height: 1.5;
+    }
+
+    /* ── PLATFORM GRID ── */
+    .platform-section {
+      background: var(--purple-ghost);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 2.5rem;
+    }
+    .platform-section .section {
+      padding: 0;
+    }
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .pillar {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--purple);
+      padding: 1.75rem 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pillar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(26,24,48,0.08);
+    }
+    .pillar-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--purple-pale);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .pillar h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+      line-height: 1.25;
+    }
+    .pillar p {
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    /* ── JOIN ── */
+    .join-section {
+      background: var(--purple);
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .join-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .join-section p {
+      color: var(--purple-pale);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+    .join-form {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .join-form input[type=email] {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      padding: 0.8rem 1.25rem;
+      border: 1px solid rgba(212,208,240,0.4);
+      border-radius: 2px;
+      background: rgba(255,255,255,0.1);
+      color: var(--white);
+      width: 300px;
+      outline: none;
+    }
+    .join-form input[type=email]::placeholder { color: var(--purple-pale); opacity: 0.7; }
+    .join-form input[type=email]:focus { border-color: var(--purple-pale); background: rgba(255,255,255,0.15); }
+    .join-form button {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--white);
+      color: var(--purple);
+      border: none;
+      border-radius: 2px;
+      padding: 0.8rem 1.75rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .join-form button:hover { background: var(--purple-ghost); }
+    .donate-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.8rem 1.75rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .donate-btn:hover { background: #e0aa30; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      text-align: center;
+      padding: 1.75rem 2rem;
+      font-size: 0.78rem;
+      color: var(--purple-light);
+      letter-spacing: 0.04em;
+    }
+    footer a { color: var(--purple-light); text-decoration: none; }
+    footer a:hover { color: var(--purple-pale); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-bar        { animation: fadeUp 0.6s ease both; }
+    .hero-eyebrow    { animation: fadeUp 0.6s 0.1s ease both; }
+    .hero h1         { animation: fadeUp 0.7s 0.2s ease both; }
+    .hero-thesis     { animation: fadeUp 0.7s 0.35s ease both; }
+    .hero-tagline    { animation: fadeUp 0.7s 0.45s ease both; }
+    .hero-actions    { animation: fadeUp 0.7s 0.55s ease both; }
+
+    @media (max-width: 640px) {
+      nav { padding: 0.9rem 1.25rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.72rem; letter-spacing: 0.06em; }
+      .section { padding: 3.5rem 1.25rem; }
+      .founding { padding: 3.5rem 1.25rem; }
+      .platform-section { padding: 3.5rem 1.25rem; }
+      hr.divider { margin: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Free America <span>Movement</span></div>
+    <div class="nav-links">
+      <a href="#founding">Our case</a>
+      <a href="#platform">Platform</a>
+      <a href="#join">Join</a>
+      <a href="https://secure.actblue.com/donate/free-america-movement" class="nav-donate">Donate</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bar">
+      <span class="bar-red"></span>
+      <span class="bar-purple"></span>
+      <span class="bar-blue"></span>
+    </div>
+    <p class="hero-eyebrow">A cross-partisan civic movement &nbsp;·&nbsp; Est. 2026</p>
+    <h1>
+      <em>Free America</em>
+      <span class="word-movement">Movement</span>
+    </h1>
+    <p class="hero-thesis">"Pro-reform. Pro-future generations. Pro-America."</p>
+    <p class="hero-tagline">
+      This moment — however difficult — is an opportunity. Our democratic institutions have structural weaknesses that have been building for decades. We can fix them. We must.
+    </p>
+    <div class="hero-actions">
+      <a href="#platform" class="btn-primary">See the platform</a>
+      <a href="#join" class="btn-secondary">Join the movement</a>
+    </div>
+  </div>
+
+  <div class="stripe"></div>
+
+  <!-- FOUNDING STATEMENT -->
+  <div class="founding" id="founding">
+    <div class="section">
+      <div class="section-label">Our founding statement</div>
+      <h2>We are not anti-anyone.<br>We are pro-reform.</h2>
+
+      <p>The Free America Movement was founded on a simple belief: this is not a moment to play it safe. The structural weaknesses in our democracy — in Congress, in our courts, in our electoral system, in our tax code — have been exploited for decades by those with the money and power to do so. The result is a government that serves its donors far better than its citizens.</p>
+
+      <p>We are Democrats and independents — and we welcome any Republican with the courage to put country over party. We are not organized around opposition to any person or administration. We are organized around a platform of structural renewal that we believe the majority of Americans, across party lines, can unite behind.</p>
+
+      <div class="founding-pullquote">
+        "We risk becoming the first generation to hand our children and grandchildren a country that is worse than the one we were given. That is not acceptable."
+      </div>
+
+      <p>A Republican-led Congress has abdicated its constitutional role as a co-equal branch of government — choosing party loyalty over the checks and balances that protect every American, regardless of how they vote. A Supreme Court has become a political institution rather than a legal one. An Electoral College designed for a different era distorts the will of the majority. A tax code written by and for the donor class burdens working Americans and mortgages the future of our grandchildren.</p>
+
+      <p><strong>These are not partisan problems. They are structural ones.</strong> And this moment — as painful as it is — has given us an unprecedented opportunity to name them clearly, build a coalition around fixing them, and elect leaders who will actually do it.</p>
+
+      <p>FAM exists to make people excited about participating. To give voters something to vote <em>for</em>. To build the kind of broad, energized coalition that doesn't just win elections — but uses that power to leave the country better than we found it.</p>
+    </div>
+  </div>
+
+  <!-- PLATFORM -->
+  <div class="platform-section" id="platform">
+    <div class="section">
+      <div class="section-label">The platform</div>
+      <h2>Seven structural changes<br>worth fighting for</h2>
+      <div class="platform-grid">
+
+        <div class="pillar">
+          <div class="pillar-num">01</div>
+          <h3>Fair Representation in Congress</h3>
+          <p>The House of Representatives has not grown with the country in over a century. Significantly expanding its size would reduce gerrymandering's power, dilute the influence of money per seat, and make Congress genuinely representative again.</p>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-num">02</div>
+          <h3>Electoral Reform</h3>
+          <p>The President should be chosen by the American people — all of them. We support ending winner-take-all Electoral College allocations in favor of proportional distribution, and will fight for a national popular vote if that is what it takes.</p>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-num">03</div>
+          <h3>Supreme Court Reform</h3>
+          <p>The Supreme Court has become a political institution. Term limits, enforceable ethics standards, and structural reforms are necessary to restore it as a court of law — not an extension of partisan politics.</p>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-num">04</div>
+          <h3>A Fair Tax Code</h3>
+          <p>The current tax code is the fossil record of decades of donor capture — written by and for those with the wealth to influence its drafting. We need a tax system where everyone, individuals and corporations alike, pays their fair share.</p>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-num">05</div>
+          <h3>Right to Privacy</h3>
+          <p>Every American has a fundamental right to privacy — from their government and from corporations. This right must be explicit, constitutional, and enforceable in the digital age.</p>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-num">06</div>
+          <h3>Fiscal Responsibility</h3>
+          <p>An out-of-control deficit is a tax on future generations — one they never voted for. We cannot claim to care about our children's future while continuing to borrow freely against it. Responsible governance requires honest accounting.</p>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-num">07</div>
+          <h3>Immigration Reform</h3>
+          <p>Secure borders and a fair path to citizenship are not opposites — they are two halves of a functioning system. The current system forces people into illegality before it will consider letting them belong. That is a failure of policy, not of people. We need a real, workable path to citizenship.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- JOIN -->
+  <div class="join-section" id="join">
+    <h2>Something worth<br>voting for.</h2>
+    <p>Stay informed, get involved, and help build the coalition that gives this platform the power to become law.</p>
+    <div class="join-form">
+      <input type="email" placeholder="your@email.com" />
+      <button type="button">Stay informed</button>
+    </div>
+    <a href="https://secure.actblue.com/donate/free-america-movement" class="donate-btn">Donate via ActBlue</a>
+  </div>
+
+  <footer>
+    &copy; 2026 Free America Movement &nbsp;&middot;&nbsp;
+    <a href="mailto:info@free-america-movement.org">info@free-america-movement.org</a>
+    &nbsp;&middot;&nbsp; Paid for by the Free America Movement
+  </footer>
+
+</body>
+</html>
