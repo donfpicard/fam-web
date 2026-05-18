@@ -373,41 +373,23 @@
       font-size: 1.05rem;
       line-height: 1.75;
     }
-    .join-form {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 1.5rem;
+    /* MailerLite form wrapper — overrides to blend into purple section */
+    .ml-form-wrapper {
+      max-width: 560px;
+      margin: 0 auto 1rem;
     }
-    .join-form input[type=email] {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      padding: 0.8rem 1.25rem;
-      border: 1px solid rgba(212,208,240,0.4);
-      border-radius: 2px;
-      background: rgba(255,255,255,0.1);
-      color: var(--white);
-      width: 300px;
-      outline: none;
+    .ml-form-wrapper .ml-embedded {
+      background: transparent !important;
     }
-    .join-form input[type=email]::placeholder { color: var(--purple-pale); opacity: 0.7; }
-    .join-form input[type=email]:focus { border-color: var(--purple-pale); background: rgba(255,255,255,0.15); }
-    .join-form button {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      background: var(--white);
-      color: var(--purple);
-      border: none;
-      border-radius: 2px;
-      padding: 0.8rem 1.75rem;
-      cursor: pointer;
-      transition: background 0.2s;
+    .join-consent {
+      font-size: 0.72rem;
+      color: var(--purple-light);
+      opacity: 0.7;
+      max-width: 560px;
+      margin: 0 auto 1.75rem;
+      line-height: 1.6;
     }
-    .join-form button:hover { background: var(--purple-ghost); }
+    .join-consent a { color: var(--purple-pale); }
     .donate-btn {
       display: inline-block;
       background: var(--gold);
@@ -456,6 +438,7 @@
       .founding { padding: 3.5rem 1.25rem; }
       .platform-section { padding: 3.5rem 1.25rem; }
       hr.divider { margin: 0 1.25rem; }
+      .ml-form-wrapper { padding: 0 1rem; }
     }
   </style>
 </head>
@@ -503,7 +486,7 @@
 
       <p>The Free America Movement was founded on a simple belief: this is not a moment to play it safe. The structural weaknesses in our democracy — in Congress, in our courts, in our electoral system, in our tax code — have been exploited for decades by those with the money and power to do so. The result is a government that serves its donors instead of its citizens.</p>
 
-      <p>We are Democrats and independents — and we welcome any like-minded Republicans. We are not organized around opposition to any person or administration. We are organized around a platform of structural renewal that we believe the majority of Americans, across party lines, can unite behind.</p>
+      <p>We are Democrats and independents — and we welcome like-minded Republicans — who share a commitment to structural renewal. We are not organized around opposition to any person or administration. We are organized around a concrete platform that we believe the majority of Americans can unite behind.</p>
 
       <div class="founding-pullquote">
         "We risk becoming the first generation to hand our children and grandchildren a country that is worse than the one we were given. That is not acceptable."
@@ -513,6 +496,8 @@
 
       <p><strong>These are not partisan problems. They are structural ones.</strong> And this moment — as painful as it is — has given us an unprecedented opportunity to name them clearly, build a coalition around fixing them, and elect leaders who will actually do it.</p>
 
+      <p>We are clear-eyed about what achieving our platform requires: a Democratic-controlled Congress. Not because FAM is a party organization, but because that is the political reality of this moment. The structural reforms we are fighting for need legislators who will actually pass them — and right now, those legislators are Democrats and the independents who caucus with them.</p>
+
       <p>FAM exists to make people excited about participating. To give voters something to vote <em>for</em>. To build the kind of broad, energized coalition that doesn't just win elections — but uses that power to leave the country better than we found it.</p>
     </div>
   </div>
@@ -521,7 +506,7 @@
   <div class="platform-section" id="platform">
     <div class="section">
       <div class="section-label">The platform</div>
-      <h2>Seven structural changes<br>worth fighting for</h2>
+      <h2>Eight structural changes<br>worth fighting for</h2>
       <div class="platform-grid">
 
         <div class="pillar">
@@ -566,6 +551,12 @@
           <p>Secure borders and a fair path to citizenship are not opposites — they are two halves of a functioning system. The current system forces people into illegality before it will consider letting them belong. That is a failure of policy, not of people. We need a real, workable path to citizenship.</p>
         </div>
 
+        <div class="pillar">
+          <div class="pillar-num">08</div>
+          <h3>A Sane Energy Policy</h3>
+          <p>Energy independence is an economic issue, a national security issue, and a matter of common sense. By diversifying our energy sources, producing more at home, and encouraging fuel-efficient technologies and behaviors, we can lower costs for every American — and stop sending money to the autocratic regimes that benefit from our dependence on foreign oil.</p>
+        </div>
+
       </div>
     </div>
   </div>
@@ -574,16 +565,35 @@
   <div class="join-section" id="join">
     <h2>Something worth<br>voting for.</h2>
     <p>Stay informed, get involved, and help build the coalition that gives this platform the power to become law.</p>
-    <div class="join-form">
-      <input type="email" placeholder="your@email.com" />
-      <button type="button">Stay informed</button>
+
+    <!-- MailerLite embedded form -->
+    <div class="ml-form-wrapper">
+      <div class="ml-embedded" data-form="oxV6M5"></div>
     </div>
+
+    <p class="join-consent">
+      Your contact information will never be sold or shared with any third party.
+      You may unsubscribe at any time by emailing <a href="mailto:info@free-america-movement.org">info@free-america-movement.org</a>.
+      See our <a href="privacy.html">Privacy Policy</a> for full details.
+    </p>
+
     <a href="https://secure.actblue.com/donate/free-america-movement" class="donate-btn">Donate via ActBlue</a>
   </div>
+
+  <!-- MailerLite Universal -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2356706');
+  </script>
+  <!-- End MailerLite Universal -->
 
   <footer>
     &copy; 2026 Free America Movement &nbsp;&middot;&nbsp;
     <a href="mailto:info@free-america-movement.org">info@free-america-movement.org</a>
+    &nbsp;&middot;&nbsp; <a href="privacy.html">Privacy Policy</a>
     &nbsp;&middot;&nbsp; Paid for by the Free America Movement
   </footer>
 

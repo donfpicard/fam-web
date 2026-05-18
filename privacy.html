@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Free America Movement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:          #1A1830;
+      --ink-soft:     #3D3A5C;
+      --purple:       #4A3F9F;
+      --purple-mid:   #6B5FBE;
+      --purple-light: #9B92D8;
+      --purple-pale:  #D4D0F0;
+      --purple-ghost: #EEEDF9;
+      --gold:         #C9962A;
+      --white:        #FAFAF8;
+      --border:       rgba(74,63,159,0.15);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--purple-light); }
+    .nav-back {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--purple-pale);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 1; }
+
+    /* ── HEADER ── */
+    .page-header {
+      background: var(--purple-ghost);
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+    }
+    .page-header .label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+      margin-bottom: 0.75rem;
+    }
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .page-header .updated {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      opacity: 0.7;
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem 5rem;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      color: var(--ink-soft);
+      line-height: 1.85;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .policy-section {
+      margin-bottom: 2.75rem;
+    }
+    .policy-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-section p {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      line-height: 1.85;
+      margin-bottom: 0.85rem;
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section ul {
+      margin: 0.5rem 0 0.85rem 1.5rem;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    .policy-section ul li { margin-bottom: 0.35rem; }
+    .policy-section strong { color: var(--ink); font-weight: 500; }
+
+    .highlight-box {
+      background: var(--purple-ghost);
+      border-left: 3px solid var(--purple);
+      border-radius: 0 4px 4px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+      font-size: 0.975rem;
+      color: var(--ink-soft);
+      line-height: 1.8;
+    }
+    .highlight-box strong { color: var(--purple); }
+
+    .contact-box {
+      background: var(--ink);
+      border-radius: 4px;
+      padding: 2rem 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .contact-box h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+    .contact-box p {
+      font-size: 0.95rem;
+      color: var(--purple-pale);
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+    .contact-box a {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.7rem 1.75rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .contact-box a:hover { background: #e0aa30; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      text-align: center;
+      padding: 1.75rem 2rem;
+      font-size: 0.78rem;
+      color: var(--purple-light);
+      letter-spacing: 0.04em;
+    }
+    footer a { color: var(--purple-light); text-decoration: none; }
+    footer a:hover { color: var(--purple-pale); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0.9rem 1.25rem; }
+      .content { padding: 2.5rem 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Free America <span>Movement</span></a>
+    <a href="index.html" class="nav-back">← Back to home</a>
+  </nav>
+
+  <div class="page-header">
+    <p class="label">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Effective date: January 1, 2026 &nbsp;&middot;&nbsp; Last updated: May 2026</p>
+  </div>
+
+  <div class="content">
+
+    <p class="intro">
+      The Free America Movement advocates for a fundamental right to privacy for every American. We hold ourselves to that same standard. This policy explains plainly what information we collect, how we use it, and what we will never do with it.
+    </p>
+
+    <div class="policy-section">
+      <h2>1. Information We Collect</h2>
+      <p>We collect only what you voluntarily provide to us:</p>
+      <ul>
+        <li><strong>Email address</strong> — when you sign up to stay informed</li>
+        <li><strong>Phone number</strong> — if you choose to provide it for text alerts (optional)</li>
+        <li><strong>Name and contact information</strong> — if you make a donation or contact us directly</li>
+        <li><strong>Donor information</strong> — if you contribute, we collect the information required by law (see Section 4)</li>
+      </ul>
+      <p>We do not use tracking pixels, behavioral advertising, or third-party analytics that identify you personally.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>2. How We Use Your Information</h2>
+      <p>We use your information only for the following purposes:</p>
+      <ul>
+        <li>Sending you updates, news, and calls to action from the Free America Movement</li>
+        <li>Sending text alerts if you have provided your phone number and consented to receive them</li>
+        <li>Processing donations and maintaining required financial records</li>
+        <li>Responding to your inquiries or requests</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Our core commitment:</strong> Your name, email address, phone number, and any other personal information you provide to FAM will never be sold, rented, traded, or shared with any outside organization, company, or individual — for any purpose.
+      </div>
+    </div>
+
+    <div class="policy-section">
+      <h2>3. What We Will Never Do</h2>
+      <ul>
+        <li>Sell or rent your personal information to any third party</li>
+        <li>Share your contact information with other political organizations, campaigns, or advocacy groups without your explicit consent</li>
+        <li>Use your information for purposes other than those described in this policy</li>
+        <li>Send you text messages if you have not opted in</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>4. FEC Disclosure Requirements</h2>
+      <p>
+        The Free America Movement is a registered Super PAC subject to Federal Election Commission (FEC) regulations. Federal law requires us to disclose certain donor information to the FEC for contributions above applicable thresholds. This information becomes part of the public record as required by law.
+      </p>
+      <div class="highlight-box">
+        <strong>Required by law:</strong> If you make a contribution, your name, address, occupation, employer, and contribution amount may be reported to the FEC and made publicly available in accordance with federal campaign finance law. This disclosure is a legal obligation — not a choice — and applies to all federally registered political committees.
+      </div>
+      <p>
+        We have no control over how the FEC publishes this information once it has been submitted, as it becomes part of the public record. If you have questions about FEC disclosure requirements, you can visit <a href="https://www.fec.gov" target="_blank" rel="noopener">fec.gov</a>.
+      </p>
+    </div>
+
+    <div class="policy-section">
+      <h2>5. Email and Text Communications</h2>
+      <p>
+        Every email we send includes an unsubscribe link. You may opt out of email communications at any time by clicking that link or by emailing us directly at <a href="mailto:info@free-america-movement.org">info@free-america-movement.org</a>.
+      </p>
+      <p>
+        If you have signed up for text alerts, you may opt out at any time by replying STOP to any text message, or by emailing us. Once you opt out, we will not send you further text messages.
+      </p>
+    </div>
+
+    <div class="policy-section">
+      <h2>6. Data Security</h2>
+      <p>
+        We take reasonable technical and organizational measures to protect your personal information from unauthorized access, disclosure, or loss. Our contact list is managed through Mailchimp, which maintains its own security standards and certifications. We do not store payment information — all donation processing is handled by ActBlue, which maintains PCI-compliant payment security.
+      </p>
+    </div>
+
+    <div class="policy-section">
+      <h2>7. Cookies and Website Data</h2>
+      <p>
+        Our website does not use advertising cookies or third-party tracking. We may use basic, anonymous analytics to understand how many people visit our site and which pages are most read. This data is aggregate and cannot be used to identify you personally.
+      </p>
+    </div>
+
+    <div class="policy-section">
+      <h2>8. Changes to This Policy</h2>
+      <p>
+        If we make material changes to this privacy policy, we will update the effective date at the top of this page and notify subscribers by email. We will never change our core commitment: your personal information will not be sold or shared.
+      </p>
+    </div>
+
+    <div class="contact-box">
+      <h2>Questions or removal requests?</h2>
+      <p>
+        To be removed from our contact list, to ask a question about your data, or to report a privacy concern, contact us directly. We will respond within 5 business days.
+      </p>
+      <a href="mailto:info@free-america-movement.org">info@free-america-movement.org</a>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 Free America Movement &nbsp;&middot;&nbsp;
+    <a href="index.html">Home</a>
+    &nbsp;&middot;&nbsp;
+    <a href="mailto:info@free-america-movement.org">info@free-america-movement.org</a>
+    &nbsp;&middot;&nbsp; Paid for by the Free America Movement
+  </footer>
+
+</body>
+</html>
