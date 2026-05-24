@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <title>WE ARE FAM — Free America Movement</title>
+  <desc>Collective badge for the Free America Movement. For use by candidates, on websites, and in campaign materials.</desc>
+
+  <defs>
+    <path id="bottom-arc" d="M 80 400 A 228 228 0 0 0 420 400"/>
+  </defs>
+
+  <circle cx="250" cy="250" r="245" fill="#3A4DB5"/>
+  <circle cx="250" cy="250" r="228" fill="none" stroke="white" stroke-width="2" opacity="0.12"/>
+
+  <path d="M 44 178 A 245 245 0 0 1 116 60" fill="none" stroke="#C0392B" stroke-width="18" stroke-linecap="round"/>
+  <path d="M 116 60 A 245 245 0 0 1 384 60" fill="none" stroke="#8B7FE8" stroke-width="18" stroke-linecap="round"/>
+  <path d="M 384 60 A 245 245 0 0 1 456 178" fill="none" stroke="#2471A3" stroke-width="18" stroke-linecap="round"/>
+
+  <text x="250" y="148" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="42" font-weight="700" fill="white" opacity="0.85" letter-spacing="14">WE ARE</text>
+  <text x="250" y="305" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="172" font-weight="700" fill="white" letter-spacing="6">FAM</text>
+
+  <text x="195" y="342" text-anchor="middle" font-family="serif" font-size="22" fill="white" opacity="0.4">★</text>
+  <text x="250" y="342" text-anchor="middle" font-family="serif" font-size="22" fill="white" opacity="0.4">★</text>
+  <text x="305" y="342" text-anchor="middle" font-family="serif" font-size="22" fill="white" opacity="0.4">★</text>
+
+  <text x="250" y="374" text-anchor="middle" font-family="'Trebuchet MS', sans-serif" font-size="16" font-weight="700" fill="white" opacity="0.5" letter-spacing="5">FREE-AMERICA-MOVEMENT.ORG</text>
+
+  <text font-family="'Trebuchet MS', sans-serif" font-size="10" font-weight="700" fill="white" opacity="0.35" letter-spacing="3">
+    <textPath href="#bottom-arc" startOffset="50%" text-anchor="middle">© 2026 FREE AMERICA MOVEMENT</textPath>
+  </text>
+</svg>
